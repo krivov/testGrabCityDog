@@ -25,5 +25,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             )
         );
     }
+
+    /**
+     * initialization main partial view with object variable
+     */
+    public function _initView()
+    {
+        $view = new Zend_View();
+        $view->partialLoop()->setObjectKey('object');
+
+        $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+        $viewRenderer->setView($view);
+    }
 }
 

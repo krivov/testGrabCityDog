@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var Application_Model_CityDogItem $item
+ */
+$item = $this->object;
+?>
+<div class="item">
+    <h2>
+        <a href="<?php echo $item->getLink(); ?>">
+            <?php echo $item->getTitle(); ?>
+        </a>
+    </h2>
+    <div class="category">
+        Categories:
+        <?php $categoriesLinks = array(); ?>
+        <?php foreach($item->getCategories() as $categoryTitle=>$categoryLink): ?>
+            <?php $categoriesLinks[] = "<a href='$categoryLink'>$categoryTitle</a>"; ?>
+        <?php endforeach; ?>
+        <?php echo implode(', ', $categoriesLinks); ?>
+    </div>
+    <div class="date">
+        <?php echo $item->getPubDate(); ?>
+    </div>
+    <div class="description">
+        <?php echo $item->getDescription(); ?>
+    </div>
+</div>
