@@ -3,7 +3,7 @@ Test task - grab Citydog RSS
 
 Introduction
 ------------
-It is test task which parses RSS and outputs that.
+It is a test task which parses RSS and outputs that.
 
 How to start PHP built-in web server
 ------------
